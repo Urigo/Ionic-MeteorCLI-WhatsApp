@@ -25,7 +25,15 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
   ////////////
 
   function sendMessage () {
-    // TODO: implement
+    if (_.isEmpty(this.message)) return;
+
+    Meteor.call('newMessage', {
+      text: this.message,
+      type: 'text',
+      chatId: chatId
+    });
+
+    delete this.message;
   }
 
   function inputUp () {
