@@ -8,8 +8,11 @@ function ChatCtrl ($scope, $reactive, $stateParams) {
   let chatId = $stateParams.chatId;
 
   this.helpers({
+    messages() {
+      return Messages.find({ chatId: chatId });
+    },
     data() {
       return Chats.findOne(chatId);
-    }
+    },
   });
 }
