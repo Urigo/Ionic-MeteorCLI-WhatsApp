@@ -16,6 +16,6 @@ function ChatsCtrl ($scope, $reactive) {
   ////////////
 
   function remove (chat) {
-    this.data.splice(this.data.indexOf(chat), 1);
+    this.data.remove(chat);
   }
 }
