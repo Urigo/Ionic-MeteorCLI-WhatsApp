@@ -6,7 +6,6 @@ angular:angular@1.4.8
 angular:angular-animate@1.4.8
 angular:angular-sanitize@1.4.8
 angularui:angular-ui-router@0.2.15
-autopublish@1.0.4
 autoupdate@1.2.4
 babel-compiler@5.8.24_1
 babel-runtime@0.1.4
