@@ -8,6 +8,8 @@ function NewChatCtrl($scope, $reactive, $state, NewChat) {
   this.hideNewChatModal = hideNewChatModal;
   this.newChat = newChat;
 
+  this.subscribe('users');
+
   this.helpers({
     users() {
       return Meteor.users.find({ _id: { $ne: Meteor.userId() } });
