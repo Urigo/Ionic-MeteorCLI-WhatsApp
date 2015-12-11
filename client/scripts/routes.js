@@ -51,6 +51,15 @@ function config($stateProvider, $urlRouterProvider) {
           return Meteor.user();
         }
       }
+    })
+    .state('tab.settings', {
+      url: '/settings',
+      views: {
+        'tab-settings': {
+          templateUrl: 'client/templates/settings.html',
+          controller: 'SettingsCtrl as settings',
+        }
+      }
     });
 
   $urlRouterProvider.otherwise('tab/chats');
