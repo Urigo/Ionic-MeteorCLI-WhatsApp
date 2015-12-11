@@ -66,13 +66,23 @@
     background-image: url(/message-mine.png)
   }
 
-  .message-text {
+  .text {
     padding: 5px 7px;
     word-wrap: break-word;
 
     &::after {
       content: " \00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
       display: inline;
+    }
+  }
+
+  .picture {
+    padding: 4px 4px 0;
+
+    img {
+      width: 220px;
+      height: 130px;
+      border-radius: 6px;
     }
   }
 
