@@ -21,6 +21,6 @@ function ChatsCtrl ($scope, $reactive, NewChat) {
   }
 
   function remove (chat) {
-    this.data.remove(chat);
+    Meteor.call('removeChat', chat._id);
   }
 }
