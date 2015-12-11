@@ -7,7 +7,10 @@ function config($stateProvider, $urlRouterProvider) {
     .state('tab', {
       url: '/tab',
       abstract: true,
-      templateUrl: 'client/templates/tabs.html'
+      templateUrl: 'client/templates/tabs.html',
+      resolve: {
+        user: isAuthorized
+      }
     })
     .state('tab.chats', {
       url: '/chats',
@@ -40,8 +43,24 @@ function config($stateProvider, $urlRouterProvider) {
     .state('profile', {
       url: '/profile',
       templateUrl: 'client/templates/profile.html',
-      controller: 'ProfileCtrl as profile'
+      controller: 'ProfileCtrl as profile',
+      resolve: {
+        user: isAuthorized
+      }
     });
 
   $urlRouterProvider.otherwise('tab/chats');
+
+  ////////////
+
+  function isAuthorized($q) {
+    let deferred = $q.defer();
+
+    if (_.isEmpty(Meteor.user()))
+      deferred.reject('AUTH_REQUIRED');
+    else
+      deferred.resolve();
+
+    return deferred.promise;
+  }
 }
