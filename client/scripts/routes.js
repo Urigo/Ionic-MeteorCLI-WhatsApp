@@ -9,7 +9,10 @@ function config($stateProvider, $urlRouterProvider) {
       abstract: true,
       templateUrl: 'client/templates/tabs.html',
       resolve: {
-        user: isAuthorized
+        user: isAuthorized,
+        chats() {
+          return Meteor.subscribe('chats');
+        }
       }
     })
     .state('tab.chats', {
