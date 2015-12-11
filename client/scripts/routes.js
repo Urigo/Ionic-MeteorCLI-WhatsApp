@@ -11,6 +11,9 @@ function config($stateProvider, $urlRouterProvider) {
       resolve: {
         user() {
           return Meteor.user();
+        },
+        chats() {
+          return Meteor.subscribe('chats');
         }
       }
     })
