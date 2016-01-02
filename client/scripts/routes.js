@@ -9,9 +9,16 @@ function config($stateProvider, $urlRouterProvider) {
       abstract: true,
       templateUrl: 'client/templates/tabs.html',
       resolve: {
-        user() {
-          return Meteor.user();
-        },
+        user: ['$q', function ($q) {
+          var deferred = $q.defer(),
+              currentUser = Meteor.user();
+          if (_.isEmpty(currentUser)) {
+            deferred.reject('AUTH_REQUIRED');
+          } else {
+            deferred.resolve();
+          }
+          return deferred.promise;
+        }],
         chats() {
           return Meteor.subscribe('chats');
         }
@@ -50,9 +57,16 @@ function config($stateProvider, $urlRouterProvider) {
       templateUrl: 'client/templates/profile.html',
       controller: 'ProfileCtrl as profile',
       resolve: {
-        user() {
-          return Meteor.user();
-        }
+        user: ['$q', function ($q) {
+          var deferred = $q.defer(),
+              currentUser = Meteor.user();
+          if (_.isEmpty(currentUser)) {
+            deferred.reject('AUTH_REQUIRED');
+          } else {
+            deferred.resolve();
+          }
+          return deferred.promise;
+        }]
       }
     })
     .state('tab.settings', {
