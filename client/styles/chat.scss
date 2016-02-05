@@ -45,7 +45,7 @@
     background-color: #FFF;
   }
 
-  &.message-other::before, &.message-mine::before, {
+  &.message-other::before, &.message-mine::before {
     content: "";
     position: absolute;
     bottom: 3px;
