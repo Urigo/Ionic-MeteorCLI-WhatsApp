@@ -23,12 +23,15 @@ function NewChatCtrl($scope, $reactive, $state, NewChat) {
   }
 
   function newChat(userId) {
-    let chat = Chats.findOne({ type: 'chat', userIds: { $all: [Meteor.userId(), userId] } });
+    let chat = Chats.findOne({ userIds: { $all: [Meteor.userId(), userId] } });
     if (chat) {
       return goToChat(chat._id);
     }
 
-    Meteor.call('newChat', userId, goToChat);
+    Meteor.call('newChat', userId, function(error, result) {
+            if(error) return;
+            goToChat(result);
+        });
   }
 
   function goToChat(chatId) {
