@@ -7,12 +7,17 @@ import 'angular-ui-router';
 import 'ionic-scripts';
 
 // Modules
+import Definer from '../definer';
+import RoutesConfig from '../routes';
 
 // App
 const App = angular.module('Whatsapp', [
   'angular-meteor',
   'ionic'
 ]);
+
+new Definer(App)
+  .define(RoutesConfig);
 
 // Startup
 if (Meteor.isCordova) {
