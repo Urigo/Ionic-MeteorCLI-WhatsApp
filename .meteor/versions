@@ -1,4 +1,5 @@
 allow-deny@1.0.2
+angular-templates@1.0.2
 autopublish@1.0.5
 autoupdate@1.2.6
 babel-compiler@6.5.2
@@ -6,13 +7,13 @@ babel-runtime@0.1.6
 base64@1.0.6
 binary-heap@1.0.6
 blaze@2.1.5
-blaze-html-templates@1.0.2
 blaze-tools@1.0.6
 boilerplate-generator@1.0.6
 caching-compiler@1.0.2
 caching-html-compiler@1.0.4
 callback-hook@1.0.6
 check@1.1.2
+dab0mb:ionic-assets@1.2.4
 ddp@1.2.3
 ddp-client@1.2.3
 ddp-common@1.2.3
@@ -59,7 +60,6 @@ spacebars@1.0.9
 spacebars-compiler@1.0.9
 standard-minifier-css@1.0.4
 standard-minifier-js@1.0.4
-templating@1.1.7
 templating-tools@1.0.2
 tracker@1.0.11
 ui@1.0.9
