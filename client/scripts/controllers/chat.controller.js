@@ -15,6 +15,9 @@ export default class ChatCtrl extends Controller {
       }
     });
   }
+
+  sendMessage() {
+  }
 }
 
 ChatCtrl.$inject = ['$scope', '$stateParams'];
