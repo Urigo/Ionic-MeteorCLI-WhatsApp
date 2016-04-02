@@ -1,5 +1,15 @@
 <ion-view view-title="Chats">
   <ion-content>
-
+    <ion-list>
+      <ion-item ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'"
+                class="item-chat item-remove-animate item-avatar item-icon-right"
+                type="item-text-wrap">
+        <img ng-src="{{ chat.picture }}">
+        <h2>{{ chat.name }}</h2>
+        <p>{{ chat.lastMessage.text }}</p>
+        <span class="last-message-timestamp">{{ chat.lastMessage.timestamp }}</span>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
