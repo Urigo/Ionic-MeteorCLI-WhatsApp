@@ -7,7 +7,7 @@
       <div ng-repeat="message in chat.messages" class="message-wrapper">
         <div class="message" ng-class-even="'message-mine'" ng-class-odd="'message-other'">
           <div class="message-text">{{ message.text }}</div>
-          <span class="message-timestamp">{{ message.timestamp }}</span>
+          <span class="message-timestamp">{{ message.timestamp | amDateFormat: 'HH:mm' }}</span>
         </div>
       </div>
     </div>
