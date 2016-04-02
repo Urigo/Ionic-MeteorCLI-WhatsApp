@@ -8,6 +8,7 @@ import 'ionic-scripts';
 
 // Modules
 import Definer from '../definer';
+import ChatsCtrl from '../controllers/chats.controller';
 import RoutesConfig from '../routes';
 
 // App
@@ -17,6 +18,7 @@ const App = angular.module('Whatsapp', [
 ]);
 
 new Definer(App)
+  .define(ChatsCtrl)
   .define(RoutesConfig);
 
 // Startup
