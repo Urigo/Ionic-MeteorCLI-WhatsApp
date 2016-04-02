@@ -12,6 +12,7 @@
     "angular-sanitize": "^1.5.3",
     "angular-ui-router": "^0.2.18",
     "ionic-scripts": "0.0.1",
-    "meteor-node-stubs": "~0.2.0"
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.12.0"
   }
 }
