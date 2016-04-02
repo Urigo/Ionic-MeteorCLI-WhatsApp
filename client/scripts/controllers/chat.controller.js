@@ -16,6 +16,9 @@ export default class ChatCtrl extends Controller {
       }
     });
   }
+
+  sendMessage() {
+  }
 }
 
 ChatCtrl.$name = 'ChatCtrl';
