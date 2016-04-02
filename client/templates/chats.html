@@ -3,7 +3,8 @@
     <ion-list>
       <ion-item ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'"
                 class="item-chat item-remove-animate item-avatar item-icon-right"
-                type="item-text-wrap">
+                type="item-text-wrap"
+                href="#/tab/chats/{{ chat._id }}">
         <img ng-src="{{ chat.picture }}">
         <h2>{{ chat.name }}</h2>
         <p>{{ chat.lastMessage.text }}</p>
