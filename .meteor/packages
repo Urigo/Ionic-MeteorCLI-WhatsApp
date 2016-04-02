@@ -21,3 +21,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 dab0mb:ionic-assets
 angular-templates
 fourseven:scss
+check
