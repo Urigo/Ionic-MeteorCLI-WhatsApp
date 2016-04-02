@@ -7,7 +7,7 @@
         <img ng-src="{{ chat.picture }}">
         <h2>{{ chat.name }}</h2>
         <p>{{ chat.lastMessage.text }}</p>
-        <span class="last-message-timestamp">{{ chat.lastMessage.timestamp }}</span>
+        <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
