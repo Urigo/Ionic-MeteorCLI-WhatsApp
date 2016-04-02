@@ -13,6 +13,7 @@ import { Meteor } from 'meteor/meteor';
 // Modules
 import ChatsCtrl from '../controllers/chats.controller';
 import ChatCtrl from '../controllers/chat.controller';
+import LoginCtrl from '../controllers/login.controller';
 import InputDirective from '../directives/input.directive';
 import CalendarFilter from '../filters/calendar.filter';
 import RoutesConfig from '../routes';
@@ -30,6 +31,7 @@ Angular.module(App, [
 new Loader(App)
   .load(ChatsCtrl)
   .load(ChatCtrl)
+  .load(LoginCtrl)
   .load(InputDirective)
   .load(CalendarFilter)
   .load(RoutesConfig);
