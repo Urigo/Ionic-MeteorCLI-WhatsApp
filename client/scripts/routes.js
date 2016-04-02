@@ -8,12 +8,21 @@ import profileTemplateUrl from '../templates/profile.html';
 import tabsTemplateUrl from '../templates/tabs.html';
 
 export default class RoutesConfig extends Config {
+  constructor() {
+    super(...arguments);
+
+    this.isAuthorized = ['$auth', this.isAuthorized.bind(this)];
+  }
+
   configure() {
     this.$stateProvider
       .state('tab', {
         url: '/tab',
         abstract: true,
-        templateUrl: tabsTemplateUrl
+        templateUrl: tabsTemplateUrl,
+        resolve: {
+          user: this.isAuthorized
+        }
       })
       .state('tab.chats', {
         url: '/chats',
@@ -46,10 +55,17 @@ export default class RoutesConfig extends Config {
       .state('profile', {
         url: '/profile',
         templateUrl: profileTemplateUrl,
-        controller: 'ProfileCtrl as profile'
+        controller: 'ProfileCtrl as profile',
+        resolve: {
+          user: this.isAuthorized
+        }
       });
 
     this.$urlRouterProvider.otherwise('tab/chats');
+  }
+
+  isAuthorized($auth) {
+    return $auth.awaitUser();
   }
 }
 
