@@ -20,6 +20,15 @@ export default class ChatCtrl extends Controller {
   }
 
   sendMessage() {
+    if (_.isEmpty(this.message)) return;
+
+    this.callMethod('newMessage', {
+      text: this.message,
+      type: 'text',
+      chatId: this.chatId
+    });
+
+    delete this.message;
   }
 
   inputUp () {
