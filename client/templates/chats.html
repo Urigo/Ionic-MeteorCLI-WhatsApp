@@ -9,6 +9,9 @@
         <p>{{ chat.lastMessage.text }}</p>
         <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span>
         <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button class="button-assertive" ng-click="chats.remove(chat)">
+          Delete
+        </ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>
