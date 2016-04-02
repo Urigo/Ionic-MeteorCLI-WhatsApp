@@ -13,6 +13,6 @@ export default class ChatsCtrl extends Controller {
   }
 
   remove(chat) {
-    this.data.splice(this.data.indexOf(chat), 1);
+    this.data.remove(chat._id);
   }
 }
