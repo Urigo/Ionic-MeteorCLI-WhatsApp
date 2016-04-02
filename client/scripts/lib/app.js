@@ -11,6 +11,7 @@ import 'ionic-scripts';
 import Definer from '../definer';
 import ChatsCtrl from '../controllers/chats.controller';
 import ChatCtrl from '../controllers/chat.controller';
+import InputDirective from '../directives/input.directive';
 import CalendarFilter from '../filters/calendar.filter';
 import RoutesConfig from '../routes';
 
@@ -24,6 +25,7 @@ const App = angular.module('Whatsapp', [
 new Definer(App)
   .define(ChatsCtrl)
   .define(ChatCtrl)
+  .define(InputDirective)
   .define(CalendarFilter)
   .define(RoutesConfig);
 
