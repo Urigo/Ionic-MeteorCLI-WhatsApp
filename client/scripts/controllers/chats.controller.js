@@ -12,7 +12,13 @@ export default class ChatsCtrl extends Controller {
     });
   }
 
+  showNewChatModal() {
+    this.NewChat.showModal();
+  }
+
   remove(chat) {
     this.data.remove(chat);
   }
 }
+
+ChatsCtrl.$inject = ['NewChat'];
