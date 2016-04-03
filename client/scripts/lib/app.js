@@ -18,6 +18,7 @@ import ProfileCtrl from '../controllers/profile.controller';
 import SettingsCtrl from '../controllers/settings.controller';
 import InputDirective from '../directives/input.directive';
 import CalendarFilter from '../filters/calendar.filter';
+import NewChatService from '../services/new-chat.service';
 import { RoutesConfig, RoutesRunner } from '../routes';
 
 // App
@@ -37,6 +38,7 @@ new Definer(App)
   .define(SettingsCtrl)
   .define(InputDirective)
   .define(CalendarFilter)
+  .define(NewChatService)
   .define(RoutesConfig)
   .define(RoutesRunner);
 
