@@ -15,7 +15,7 @@ import ChatCtrl from '../controllers/chat.controller';
 import LoginCtrl from '../controllers/login.controller';
 import InputDirective from '../directives/input.directive';
 import CalendarFilter from '../filters/calendar.filter';
-import RoutesConfig from '../routes';
+import { RoutesConfig, RoutesRunner } from '../routes';
 
 // App
 const App = angular.module('Whatsapp', [
@@ -31,7 +31,8 @@ new Definer(App)
   .define(LoginCtrl)
   .define(InputDirective)
   .define(CalendarFilter)
-  .define(RoutesConfig);
+  .define(RoutesConfig)
+  .define(RoutesRunner);
 
 // Startup
 if (Meteor.isCordova) {
