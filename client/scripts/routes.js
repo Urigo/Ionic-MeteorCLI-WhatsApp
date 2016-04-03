@@ -1,4 +1,5 @@
-import { Config } from 'angular-ecmascript/module-helpers';
+import { _ } from 'meteor/underscore';
+import { Config, Runner } from 'angular-ecmascript/module-helpers';
 
 import chatsTemplateUrl from '../templates/chats.html';
 import chatTemplateUrl from '../templates/chat.html';
@@ -7,7 +8,7 @@ import loginTemplateUrl from '../templates/login.html';
 import profileTemplateUrl from '../templates/profile.html';
 import tabsTemplateUrl from '../templates/tabs.html';
 
-export default class RoutesConfig extends Config {
+class RoutesConfig extends Config {
   constructor() {
     super(...arguments);
 
@@ -70,3 +71,19 @@ export default class RoutesConfig extends Config {
 }
 
 RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+
+class RoutesRunner extends Runner {
+  run() {
+    this.$rootScope.$on('$stateChangeError', (...args) => {
+      const err = _.last(args);
+
+      if (err === 'AUTH_REQUIRED') {
+        this.$state.go('login');
+      }
+    });
+  }
+}
+
+RoutesRunner.$inject = ['$rootScope', '$state'];
+
+export default [RoutesConfig, RoutesRunner];
