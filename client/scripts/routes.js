@@ -6,6 +6,7 @@ import chatTemplateUrl from '../templates/chat.html';
 import confirmationTemplateUrl from '../templates/confirmation.html';
 import loginTemplateUrl from '../templates/login.html';
 import profileTemplateUrl from '../templates/profile.html';
+import settingsTemplateUrl from '../templates/settings.html';
 import tabsTemplateUrl from '../templates/tabs.html';
 
 class RoutesConfig extends Config {
@@ -59,6 +60,15 @@ class RoutesConfig extends Config {
         controller: 'ProfileCtrl as profile',
         resolve: {
           user: this.isAuthorized
+        }
+      })
+      .state('tab.settings', {
+        url: '/settings',
+        views: {
+          'tab-settings': {
+            templateUrl: settingsTemplateUrl,
+            controller: 'SettingsCtrl as settings',
+          }
         }
       });
 
