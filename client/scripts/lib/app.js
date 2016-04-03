@@ -12,6 +12,7 @@ import 'ionic-scripts';
 import Definer from '../definer';
 import ChatsCtrl from '../controllers/chats.controller';
 import ChatCtrl from '../controllers/chat.controller';
+import ConfirmationCtrl from '../controllers/confirmation.controller';
 import LoginCtrl from '../controllers/login.controller';
 import InputDirective from '../directives/input.directive';
 import CalendarFilter from '../filters/calendar.filter';
@@ -28,6 +29,7 @@ const App = angular.module('Whatsapp', [
 new Definer(App)
   .define(ChatsCtrl)
   .define(ChatCtrl)
+  .define(ConfirmationCtrl)
   .define(LoginCtrl)
   .define(InputDirective)
   .define(CalendarFilter)
