@@ -1,6 +1,6 @@
-import { Config } from './entities';
+import { Config, Runner } from './entities';
 
-export default class RoutesConfig extends Config {
+export class RoutesConfig extends Config {
   constructor() {
     super(...arguments);
 
@@ -62,4 +62,17 @@ export default class RoutesConfig extends Config {
   }
 }
 
+export class RoutesRunner extends Runner {
+  run() {
+    this.$rootScope.$on('$stateChangeError', (...args) => {
+      const err = _.last(args);
+
+      if (err === 'AUTH_REQUIRED') {
+        this.$state.go('login');
+      }
+    });
+  }
+}
+
 RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+RoutesRunner.$inject = ['$rootScope', '$state'];
