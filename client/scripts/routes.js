@@ -1,4 +1,5 @@
 import { _ } from 'meteor/underscore';
+import { Meteor } from 'meteor/meteor';
 import { Config, Runner } from 'angular-ecmascript/module-helpers';
 
 import chatsTemplateUrl from '../templates/chats.html';
@@ -23,7 +24,10 @@ class RoutesConfig extends Config {
         abstract: true,
         templateUrl: tabsTemplateUrl,
         resolve: {
-          user: this.isAuthorized
+          user: this.isAuthorized,
+          chats() {
+            return Meteor.subscribe('chats');
+          }
         }
       })
       .state('tab.chats', {
