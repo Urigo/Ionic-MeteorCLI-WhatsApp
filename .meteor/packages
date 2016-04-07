@@ -15,7 +15,6 @@ standard-minifier-js@1.2.0_1    # JS minifier run for production mode
 es5-shim@4.6.14_1                # ECMAScript 5 compatibility for older browsers.
 ecmascript@0.5.8_1              # Enable ECMAScript2015+ syntax in app code
 
-autopublish             # Publish all data to the clients (for prototyping)
 dab0mb:ionic-assets
 angular-templates
 mobile-status-bar
