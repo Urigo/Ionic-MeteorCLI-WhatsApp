@@ -6,6 +6,8 @@ export default class NewChatCtrl extends Controller {
   constructor() {
     super(...arguments);
 
+    this.subscribe('users');
+
     this.helpers({
       users() {
         return Meteor.users.find({ _id: { $ne: this.currentUserId } });
