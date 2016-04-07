@@ -17,7 +17,7 @@ export default class ChatsCtrl extends Controller {
   }
 
   remove(chat) {
-    this.data.remove(chat._id);
+    this.callMethod('removeChat', chat._id);
   }
 }
 
