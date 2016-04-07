@@ -1,4 +1,5 @@
 import { _ } from 'meteor/underscore';
+import { MeteorCameraUI } from 'meteor/okland:camera-ui';
 import { Controller } from 'angular-ecmascript/module-helpers';
 
 export default class ProfileCtrl extends Controller {
@@ -7,6 +8,21 @@ export default class ProfileCtrl extends Controller {
 
     const profile = this.currentUser && this.currentUser.profile;
     this.name = profile ? profile.name : '';
+  }
+
+  updatePicture () {
+    MeteorCameraUI.getPicture({ width: 60, height: 60 }, (err, data) => {
+      if (err) return this.handleError(err);
+
+      this.$ionicLoading.show({
+        template: 'Updating picture...'
+      });
+
+      this.callMethod('updatePicture', data, (err) => {
+        this.$ionicLoading.hide();
+        this.handleError(err);
+      });
+    });
   }
 
   updateName() {
@@ -19,6 +35,7 @@ export default class ProfileCtrl extends Controller {
   }
 
   handleError(err) {
+    if (err.error == 'cancel') return;
     this.$log.error('Profile save error ', err);
 
     this.$ionicPopup.alert({
@@ -30,4 +47,4 @@ export default class ProfileCtrl extends Controller {
 }
 
 ProfileCtrl.$name = 'ProfileCtrl';
-ProfileCtrl.$inject = ['$state', '$ionicPopup', '$log'];
+ProfileCtrl.$inject = ['$state', '$ionicLoading', '$ionicPopup', '$log'];
