@@ -61,6 +61,7 @@ rate-limit@1.0.2
 reactive-var@1.0.7
 reload@1.1.6
 retry@1.0.5
+reywood:publish-composite@1.4.2
 routepolicy@1.0.8
 service-configuration@1.0.7
 sha@1.0.5
