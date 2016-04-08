@@ -28,7 +28,7 @@
       <button ng-click="chat.sendMessage()" class="button button-clear button-positive">Send</button>
     </span>
     <span ng-if="!chat.message || chat.message.length === 0">
-      <button class="button button-clear button-icon button-positive icon ion-ios-camera-outline"></button>
+      <button ng-click="chat.sendPicture()" class="button button-clear button-icon button-positive icon ion-ios-camera-outline"></button>
       <i class="buttons-seperator icon ion-android-more-vertical"></i>
       <button class="button button-clear button-icon button-positive icon ion-ios-mic-outline"></button>
     </span>
