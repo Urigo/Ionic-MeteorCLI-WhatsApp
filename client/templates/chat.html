@@ -6,7 +6,12 @@
     <div class="message-list">
       <div ng-repeat="message in chat.messages" class="message-wrapper">
         <div class="message" ng-class="message.userId === $root.currentUser._id ? 'message-mine' : 'message-other'">
-          <div class="message-text">{{ message.text }}</div>
+          <ng-switch on="message.type">
+            <div ng-switch-when="text" class="text">{{ message.text }}</div>
+            <div ng-switch-when="picture" class="picture">
+              <img ng-src="{{ message.picture }}">
+            </div>
+          </ng-switch>
           <span class="message-timestamp">{{ message.timestamp | amDateFormat: 'HH:mm' }}</span>
         </div>
       </div>
