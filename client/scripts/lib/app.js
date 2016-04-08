@@ -1,6 +1,7 @@
 // Libs
 import 'angular-animate';
 import 'angular-meteor';
+import 'angular-meteor-auth';
 import 'angular-moment';
 import 'angular-sanitize';
 import 'angular-ui-router';
@@ -21,6 +22,7 @@ const App = 'Whatsapp';
 // App
 Angular.module(App, [
   'angular-meteor',
+  'angular-meteor.auth',
   'angularMoment',
   'ionic'
 ]);
