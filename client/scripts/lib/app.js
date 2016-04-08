@@ -2,6 +2,7 @@
 import angular from 'angular';
 import 'angular-animate';
 import 'angular-meteor';
+import 'angular-meteor-auth';
 import 'angular-moment';
 import 'angular-sanitize';
 import 'angular-ui-router';
@@ -18,6 +19,7 @@ import RoutesConfig from '../routes';
 // App
 const App = angular.module('Whatsapp', [
   'angular-meteor',
+  'angular-meteor.auth',
   'angularMoment',
   'ionic'
 ]);
