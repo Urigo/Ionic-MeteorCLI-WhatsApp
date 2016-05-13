@@ -1,6 +1,8 @@
 import { Filter } from 'angular-ecmascript/module-helpers';
 
 export default class ChatPictureFilter extends Filter {
+  static $name = 'chatPicture'
+
   filter(chat) {
     if (!chat) return;
 
@@ -11,5 +13,3 @@ export default class ChatPictureFilter extends Filter {
     return hasPicture ? otherUser.profile.picture : chat.picture || '/user-default.svg';
   };
 }
-
-ChatPictureFilter.$name = 'chatPicture';

@@ -1,17 +1,16 @@
 import { Directive } from 'angular-ecmascript/module-helpers';
 
 export default class InputDirective extends Directive {
-  constructor() {
-    super(...arguments);
+  static $name = 'input'
+  static $inject = ['$timeout']
 
-    this.restrict = 'E';
+  restrict = 'E'
 
-    this.scope = {
-      'returnClose': '=',
-      'onReturn': '&',
-      'onFocus': '&',
-      'onBlur': '&'
-    };
+  scope = {
+    'returnClose': '=',
+    'onReturn': '&',
+    'onFocus': '&',
+    'onBlur': '&'
   }
 
   link(scope, element) {
@@ -46,6 +45,3 @@ export default class InputDirective extends Directive {
     });
   }
 }
-
-InputDirective.$name = 'input';
-InputDirective.$inject = ['$timeout'];

@@ -2,6 +2,8 @@ import ionic from 'ionic-scripts';
 import { Controller } from 'angular-ecmascript/module-helpers';
 
 export default class ChatCtrl extends Controller {
+  static $inject = ['$stateParams', '$timeout', '$ionicScrollDelegate', '$ionicPopup', '$log']
+
   constructor() {
     super(...arguments);
 
@@ -92,5 +94,3 @@ export default class ChatCtrl extends Controller {
     });
   }
 }
-
-ChatCtrl.$inject = ['$stateParams', '$timeout', '$ionicScrollDelegate', '$ionicPopup', '$log'];

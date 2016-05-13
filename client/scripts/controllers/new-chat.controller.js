@@ -1,6 +1,8 @@
 import { Controller } from 'angular-ecmascript/module-helpers';
 
 export default class NewChatCtrl extends Controller {
+  static $inject = ['$state', 'NewChat', '$ionicPopup', '$log']
+
   constructor() {
     super(...arguments);
 
@@ -46,5 +48,3 @@ export default class NewChatCtrl extends Controller {
     });
   }
 }
-
-NewChatCtrl.$inject = ['$state', 'NewChat', '$ionicPopup', '$log'];

@@ -1,10 +1,12 @@
 import { Config, Runner } from 'angular-ecmascript/module-helpers';
 
 export class RoutesConfig extends Config {
+  static $inject = ['$stateProvider', '$urlRouterProvider']
+
   constructor() {
     super(...arguments);
 
-    this.isAuthorized = ['$auth', this.isAuthorized.bind(this)];
+    this.isAuthorized = ['$auth', this::this.isAuthorized];
   }
 
   configure() {
@@ -74,9 +76,9 @@ export class RoutesConfig extends Config {
   }
 }
 
-RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
-
 export class RoutesRunner extends Runner {
+  static $inject = ['$rootScope', '$state']
+
   run() {
     this.$rootScope.$on('$stateChangeError', (...args) => {
       const err = _.last(args);
@@ -87,5 +89,3 @@ export class RoutesRunner extends Runner {
     });
   }
 }
-
-RoutesRunner.$inject = ['$rootScope', '$state'];

@@ -1,6 +1,8 @@
 import { Filter } from 'angular-ecmascript/module-helpers';
 
 export default class ChatNameFilter extends Filter {
+  static $name = 'chatName'
+
   filter(chat) {
     if (!chat) return;
 
@@ -11,5 +13,3 @@ export default class ChatNameFilter extends Filter {
     return hasName ? otherUser.profile.name : chat.name || 'NO NAME';
   }
 }
-
-ChatNameFilter.$name = 'chatName';

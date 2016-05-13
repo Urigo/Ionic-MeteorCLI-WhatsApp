@@ -1,6 +1,8 @@
 import { Controller } from 'angular-ecmascript/module-helpers';
 
 export default class ProfileCtrl extends Controller {
+  static $inject = ['$state', '$ionicPopup', '$log']
+
   constructor() {
     super(...arguments);
 
@@ -43,5 +45,3 @@ export default class ProfileCtrl extends Controller {
     });
   }
 }
-
-ProfileCtrl.$inject = ['$state', '$ionicPopup', '$log'];

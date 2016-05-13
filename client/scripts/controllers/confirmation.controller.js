@@ -1,6 +1,8 @@
 import { Controller } from 'angular-ecmascript/module-helpers';
 
 export default class ConfirmationCtrl extends Controller {
+  static $inject = ['$state', '$ionicPopup', '$log']
+
   constructor() {
     super(...arguments);
 
@@ -26,5 +28,3 @@ export default class ConfirmationCtrl extends Controller {
     });
   }
 }
-
-ConfirmationCtrl.$inject = ['$state', '$ionicPopup', '$log'];
