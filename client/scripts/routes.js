@@ -1,6 +1,6 @@
 import { Config, Runner } from 'angular-ecmascript/module-helpers';
 
-export class RoutesConfig extends Config {
+class RoutesCfg extends Config {
   static $inject = ['$stateProvider', '$urlRouterProvider']
 
   constructor() {
@@ -70,7 +70,7 @@ export class RoutesConfig extends Config {
   }
 }
 
-export class RoutesRunner extends Runner {
+class RoutesRunner extends Runner {
   static $inject = ['$rootScope', '$state']
 
   run() {
@@ -83,3 +83,5 @@ export class RoutesRunner extends Runner {
     });
   }
 }
+
+export default [RoutesConfig, RoutesRunner];

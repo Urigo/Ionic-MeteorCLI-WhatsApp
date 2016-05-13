@@ -22,8 +22,8 @@ import CalendarFilter from '../filters/calendar.filter';
 import ChatNameFilter from '../filters/chat-name.filter';
 import ChatPictureFilter from '../filters/chat-picture.filter';
 import NewChatService from '../services/new-chat.service';
-import ComponentsConfig from '../components';
-import { RoutesConfig, RoutesRunner } from '../routes';
+import Components from '../components';
+import Routes from '../routes';
 
 // App
 const App = angular.module('Whatsapp', [
@@ -47,9 +47,8 @@ new Loader(App)
   .load(ChatNameFilter)
   .load(ChatPictureFilter)
   .load(NewChatService)
-  .load(ComponentsConfig)
-  .load(RoutesConfig)
-  .load(RoutesRunner);
+  .load(Components)
+  .load(Routes);
 
 // Startup
 if (Meteor.isCordova) {

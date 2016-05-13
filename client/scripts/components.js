@@ -1,6 +1,6 @@
 import { Config } from 'angular-ecmascript/module-helpers';
 
-export default class ComponentsConfig extends Config {
+export default class Components extends Config {
   static $inject = ['$compileProvider']
 
   configure() {
