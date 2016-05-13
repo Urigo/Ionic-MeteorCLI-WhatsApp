@@ -1,6 +1,6 @@
-import { Directive } from '../entities';
+import { Directive } from 'angular-ecmascript/module-helpers';
 
-export default class input extends Directive {
+export default class InputDirective extends Directive {
   constructor() {
     super(...arguments);
 
@@ -47,4 +47,5 @@ export default class input extends Directive {
   }
 }
 
-input.$inject = ['$timeout'];
+InputDirective.$name = 'input';
+InputDirective.$inject = ['$timeout'];

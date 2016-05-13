@@ -1,4 +1,4 @@
-import { Config, Runner } from './entities';
+import { Config, Runner } from 'angular-ecmascript/module-helpers';
 
 export class RoutesConfig extends Config {
   constructor() {
@@ -74,6 +74,8 @@ export class RoutesConfig extends Config {
   }
 }
 
+RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+
 export class RoutesRunner extends Runner {
   run() {
     this.$rootScope.$on('$stateChangeError', (...args) => {
@@ -86,5 +88,4 @@ export class RoutesRunner extends Runner {
   }
 }
 
-RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 RoutesRunner.$inject = ['$rootScope', '$state'];

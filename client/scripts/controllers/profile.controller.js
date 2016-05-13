@@ -1,4 +1,4 @@
-import { Controller } from '../entities';
+import { Controller } from 'angular-ecmascript/module-helpers';
 
 export default class ProfileCtrl extends Controller {
   constructor() {
@@ -44,4 +44,4 @@ export default class ProfileCtrl extends Controller {
   }
 }
 
-ProfileCtrl.$inject = ['$scope', '$state', '$ionicPopup', '$log'];
+ProfileCtrl.$inject = ['$state', '$ionicPopup', '$log'];

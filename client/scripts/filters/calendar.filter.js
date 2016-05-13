@@ -1,7 +1,7 @@
 import moment from 'moment';
-import { Filter } from '../entities';
+import { Filter } from 'angular-ecmascript/module-helpers';
 
-export default class calendar extends Filter {
+export default class CalendarFilter extends Filter {
   filter(time) {
     if (!time) return;
 
@@ -13,3 +13,5 @@ export default class calendar extends Filter {
     });
   }
 }
+
+CalendarFilter.$name = 'calendar';

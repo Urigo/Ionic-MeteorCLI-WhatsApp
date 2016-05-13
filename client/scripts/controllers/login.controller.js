@@ -1,4 +1,4 @@
-import { Controller } from '../entities';
+import { Controller } from 'angular-ecmascript/module-helpers';
 
 export default class LoginCtrl extends Controller {
   login() {
@@ -40,4 +40,4 @@ export default class LoginCtrl extends Controller {
   }
 }
 
-LoginCtrl.$inject = ['$scope', '$state', '$ionicLoading', '$ionicPopup', '$log'];
+LoginCtrl.$inject = ['$state', '$ionicLoading', '$ionicPopup', '$log'];

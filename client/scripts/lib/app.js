@@ -9,7 +9,7 @@ import 'angular-ui-router';
 import 'ionic-scripts';
 
 // Modules
-import Definer from '../definer';
+import Loader from 'angular-ecmascript/module-loader';
 import ChatsCtrl from '../controllers/chats.controller';
 import ChatCtrl from '../controllers/chat.controller';
 import ConfirmationCtrl from '../controllers/confirmation.controller';
@@ -32,21 +32,22 @@ const App = angular.module('Whatsapp', [
   'ionic'
 ]);
 
-new Definer(App)
-  .define(ChatsCtrl)
-  .define(ChatCtrl)
-  .define(ConfirmationCtrl)
-  .define(LoginCtrl)
-  .define(NewChatCtrl)
-  .define(ProfileCtrl)
-  .define(SettingsCtrl)
-  .define(InputDirective)
-  .define(CalendarFilter)
-  .define(ChatNameFilter)
-  .define(ChatPictureFilter)
-  .define(NewChatService)
-  .define(RoutesConfig)
-  .define(RoutesRunner);
+// Loader
+new Loader(App)
+  .load(ChatsCtrl)
+  .load(ChatCtrl)
+  .load(ConfirmationCtrl)
+  .load(LoginCtrl)
+  .load(NewChatCtrl)
+  .load(ProfileCtrl)
+  .load(SettingsCtrl)
+  .load(InputDirective)
+  .load(CalendarFilter)
+  .load(ChatNameFilter)
+  .load(ChatPictureFilter)
+  .load(NewChatService)
+  .load(RoutesConfig)
+  .load(RoutesRunner);
 
 // Startup
 if (Meteor.isCordova) {

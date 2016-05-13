@@ -1,4 +1,4 @@
-import { Controller } from '../entities';
+import { Controller } from 'angular-ecmascript/module-helpers';
 
 export default class ChatsCtrl extends Controller {
   constructor() {
@@ -20,4 +20,4 @@ export default class ChatsCtrl extends Controller {
   }
 }
 
-ChatsCtrl.$inject = ['$scope', 'NewChat'];
+ChatsCtrl.$inject = ['NewChat'];
