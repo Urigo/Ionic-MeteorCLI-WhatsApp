@@ -22,6 +22,7 @@ import CalendarFilter from '../filters/calendar.filter';
 import ChatNameFilter from '../filters/chat-name.filter';
 import ChatPictureFilter from '../filters/chat-picture.filter';
 import NewChatService from '../services/new-chat.service';
+import ComponentsConfig from '../components';
 import { RoutesConfig, RoutesRunner } from '../routes';
 
 // App
@@ -34,8 +35,8 @@ const App = angular.module('Whatsapp', [
 
 // Loader
 new Loader(App)
-  .load(ChatsCtrl)
   .load(ChatCtrl)
+  .load(ChatsCtrl)
   .load(ConfirmationCtrl)
   .load(LoginCtrl)
   .load(NewChatCtrl)
@@ -46,6 +47,7 @@ new Loader(App)
   .load(ChatNameFilter)
   .load(ChatPictureFilter)
   .load(NewChatService)
+  .load(ComponentsConfig)
   .load(RoutesConfig)
   .load(RoutesRunner);
 
