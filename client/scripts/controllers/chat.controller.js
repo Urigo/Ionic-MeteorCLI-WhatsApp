@@ -1,5 +1,8 @@
-import ionic from 'ionic-scripts';
+import Ionic from 'ionic-scripts';
+import { _ } from 'meteor/underscore';
+import { MeteorCameraUI } from 'meteor/okland:camera-ui';
 import { Controller } from 'angular-ecmascript/module-helpers';
+import { Chats, Messages } from '../../../lib/collections';
 
 export default class ChatCtrl extends Controller {
   static $inject = ['$stateParams', '$timeout', '$ionicScrollDelegate', '$ionicPopup', '$log']
@@ -8,7 +11,7 @@ export default class ChatCtrl extends Controller {
     super(...arguments);
 
     this.chatId = this.$stateParams.chatId;
-    this.isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
+    this.isIOS = Ionic.Platform.isWebView() && Ionic.Platform.isIOS();
     this.isCordova = Meteor.isCordova;
 
     this.helpers({

@@ -6,7 +6,7 @@ export default class Components extends Config {
   configure() {
     this.$compileProvider
       .component('tabs', {
-        templateUrl: 'client/templates/tabs.html',
+        templateUrl: 'client/templates/tabs.html'
       })
       .component('chat', {
         templateUrl: 'client/templates/chat.html',

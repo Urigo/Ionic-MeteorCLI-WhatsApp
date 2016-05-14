@@ -1,5 +1,4 @@
 // Libs
-import angular from 'angular';
 import 'angular-animate';
 import 'angular-meteor';
 import 'angular-meteor-auth';
@@ -7,6 +6,7 @@ import 'angular-moment';
 import 'angular-sanitize';
 import 'angular-ui-router';
 import 'ionic-scripts';
+import Angular from 'angular';
 
 // Modules
 import Loader from 'angular-ecmascript/module-loader';
@@ -25,8 +25,10 @@ import NewChatService from '../services/new-chat.service';
 import Components from '../components';
 import Routes from '../routes';
 
+const App = 'Whatsapp';
+
 // App
-const App = angular.module('Whatsapp', [
+Angular.module(App, [
   'angular-meteor',
   'angular-meteor.auth',
   'angularMoment',
@@ -52,12 +54,12 @@ new Loader(App)
 
 // Startup
 if (Meteor.isCordova) {
-  angular.element(document).on('deviceready', onReady);
+  Angular.element(document).on('deviceready', onReady);
 }
 else {
-  angular.element(document).ready(onReady);
+  Angular.element(document).ready(onReady);
 }
 
 function onReady() {
-  angular.bootstrap(document, ['Whatsapp']);
+  Angular.bootstrap(document, [App]);
 }

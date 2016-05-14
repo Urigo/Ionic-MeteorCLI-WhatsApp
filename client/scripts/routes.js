@@ -84,4 +84,4 @@ class RoutesRunner extends Runner {
   }
 }
 
-export default [RoutesConfig, RoutesRunner];
+export default [RoutesCfg, RoutesRunner];

@@ -1,4 +1,6 @@
+import { Meteor } from 'meteor/meteor';
 import { Controller } from 'angular-ecmascript/module-helpers';
+import { Chats } from '../../../lib/collections';
 
 export default class NewChatCtrl extends Controller {
   static $inject = ['$state', 'NewChat', '$ionicPopup', '$log']

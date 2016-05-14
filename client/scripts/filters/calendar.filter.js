@@ -1,4 +1,6 @@
-import moment from 'moment';
+import Moment from 'moment';
+import { _ } from 'meteor/underscore';
+import { Meteor } from 'meteor/meteor';
 import { Filter } from 'angular-ecmascript/module-helpers';
 
 export default class CalendarFilter extends Filter {
@@ -7,7 +9,7 @@ export default class CalendarFilter extends Filter {
   filter(time) {
     if (!time) return;
 
-    return moment(time).calendar(null, {
+    return Moment(time).calendar(null, {
       lastDay : '[Yesterday]',
       sameDay : 'LT',
       lastWeek : 'dddd',

@@ -1,3 +1,5 @@
+import { _ } from 'meteor/underscore';
+import { Meteor } from 'meteor/meteor';
 import { Filter } from 'angular-ecmascript/module-helpers';
 
 export default class ChatNameFilter extends Filter {
