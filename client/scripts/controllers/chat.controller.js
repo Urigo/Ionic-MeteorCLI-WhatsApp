@@ -23,7 +23,7 @@ export default class ChatCtrl extends Controller {
       }
     });
 
-    this.autoScroll();
+    this.autoScrollBottom();
   }
 
   sendPicture() {
@@ -55,9 +55,7 @@ export default class ChatCtrl extends Controller {
       this.keyboardHeight = 216;
     }
 
-    this.$timeout(() => {
-      this.$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(true);
-    }, 300);
+    this.scrollBottom(true);
   }
 
   inputDown () {
@@ -74,16 +72,21 @@ export default class ChatCtrl extends Controller {
     }
   }
 
-  autoScroll() {
+  autoScrollBottom() {
     let recentMessagesNum = this.messages.length;
 
     this.autorun(() => {
       const currMessagesNum = this.getCollectionReactively('messages').length;
       const animate = recentMessagesNum != currMessagesNum;
       recentMessagesNum = currMessagesNum;
-
-      this.$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(animate);
+      this.scrollBottom(animate);
     });
+  }
+
+  scrollBottom(animate) {
+    this.$timeout(() => {
+      this.$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(animate);
+    }, 300);
   }
 
   handleError(err) {

@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Config, Runner } from 'angular-ecmascript/module-helpers';
 
 class RoutesCfg extends Config {
@@ -14,7 +15,7 @@ class RoutesCfg extends Config {
       .state('tab', {
         url: '/tab',
         abstract: true,
-        template: '<tabs></tabs>',
+        templateUrl: 'client/templates/tabs.html',
         resolve: {
           user: this.isAuthorized,
           chats() {
@@ -26,7 +27,8 @@ class RoutesCfg extends Config {
         url: '/chats/:chatId',
         views: {
           'tab-chats': {
-            template: '<chat></chat>'
+            templateUrl: 'client/templates/chat.html',
+            controller: 'ChatCtrl as chat',
           }
         }
       })
@@ -34,7 +36,8 @@ class RoutesCfg extends Config {
         url: '/chats',
         views: {
           'tab-chats': {
-            template: '<chats></chats>'
+            templateUrl: 'client/templates/chats.html',
+            controller: 'ChatsCtrl as chats',
           }
         }
       })
@@ -42,21 +45,25 @@ class RoutesCfg extends Config {
         url: '/settings',
         views: {
           'tab-settings': {
-            template: '<settings></settings>'
+            templateUrl: 'client/templates/settings.html',
+            controller: 'SettingsCtrl as settings',
           }
         }
       })
       .state('login', {
         url: '/login',
-        template: '<login></login>'
+        templateUrl: 'client/templates/login.html',
+        controller: 'LoginCtrl as login',
       })
       .state('confirmation', {
         url: '/confirmation/:phone',
-        template: '<confirmation></confirmation>'
+        templateUrl: 'client/templates/confirmation.html',
+        controller: 'ConfirmationCtrl as confirmation',
       })
       .state('profile', {
         url: '/profile',
-        template: '<profile></profile>',
+        templateUrl: 'client/templates/profile.html',
+        controller: 'ProfileCtrl as profile',
         resolve: {
           user: this.isAuthorized
         }
