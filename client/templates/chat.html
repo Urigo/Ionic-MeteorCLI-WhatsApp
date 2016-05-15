@@ -18,7 +18,10 @@
     <label class="item-input-wrapper">
       <input ng-model="chat.message"
              dir="auto"
-             type="text"/>
+             type="text"
+             on-return="chat.sendMessage(); chat.closeKeyboard()"
+             on-focus="chat.inputUp()"
+             on-blur="chat.inputDown()"/>
     </label>
 
     <span ng-if="chat.message.length > 0">
