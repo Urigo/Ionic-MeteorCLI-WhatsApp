@@ -11,7 +11,7 @@
 [}]: #
 [{]: <region> (footer)
 [{]: <helper> (nav_step)
-| [Begin Tutorial >](manuals/views/step1.md) |
+| [Begin Tutorial >](manuals/views/step0.md) |
 |----------------------:|
 [}]: #
 [}]: #
