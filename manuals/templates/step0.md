@@ -4,6 +4,7 @@ Create a new project by running these commands in your command line:
 
     $ meteor create whatsapp
     $ cd whatsapp
+    $ meteor npm install
 
 Your app now contains a live and ready example. To run our app simply type the following on the command line:
 
