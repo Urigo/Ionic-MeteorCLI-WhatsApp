@@ -111,6 +111,8 @@ We will use `callMethod()` in order to call that method on the server side.
 
 Now let's create our method in `lib/methods.js`:
 
+If you're having an issue with loading the method after double checking the code, rename the file to \_methods.js to allow for it to run alphabetically before the server code "bootstrap.js" 
+
 {{{diff_step 3.22}}}
 
 Let's add validation to our method.
