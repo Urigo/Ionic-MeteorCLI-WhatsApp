@@ -63,7 +63,7 @@ In order to make the SMS verification work we will need to create a file located
 
 If you would like to test the verification with a real phone number, `accouts-phone` provides an easy access for [twilio's API](https://www.twilio.com/), for more information see [accounts-phone's repo](https://github.com/okland/accounts-phone).
 
-For debugging purposes if you'd like to add admin phone numbers and mater verification codes which will always pass the verification stage, you may add a `settings.json` file at the root folder with the following fields:
+For debugging purposes if you'd like to add admin phone numbers and master verification codes which will always pass the verification stage, you may add a `settings.json` file at the root folder with the following fields:
 
     {
       "ACCOUNTS_PHONE": {
