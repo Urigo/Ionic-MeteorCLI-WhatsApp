@@ -32,13 +32,13 @@ Next, we will replace `Blaze` (`Meteor`'s default templating engine) with `Angul
 
 We also need to make sure `Ionic` is installed along with its dependencies:
 
-    $ meteor add dab0mb:ionic-assets
-    $ meteor npm install angular@^1.5.8 --save
-    $ meteor npm install angular-animate@^1.5.8 --save
-    $ meteor npm install angular-sanitize@^1.5.8 --save
-    $ meteor npm install angular-ui-router@^0.3.1 --save
-    $ meteor npm install ionic-scripts --save
-    $ meteor npm install babel-runtime --save
+    meteor add dab0mb:ionic-assets
+    meteor npm install angular@^1.5.8 --save
+    meteor npm install angular-animate@^1.5.8 --save
+    meteor npm install angular-sanitize@^1.5.8 --save
+    meteor npm install angular-ui-router@^0.3.1 --save
+    meteor npm install ionic-scripts --save
+    meteor npm install babel-runtime --save
 
 If you're an iOS user you might encounter some issues related to double tapping not being submitted correctly. This is caused due to a package automatically included by `Meteor` and it is called `mobile-experience` so we can have a more native feeling for our app once running on a mobile device, which is not always right across the board. This package is simply a cluster of the following packages:
 
@@ -48,8 +48,8 @@ If you're an iOS user you might encounter some issues related to double tapping 
 
 You can already figure out that the `fastclick` is a potential basis for our issue. So we will install the same packages `mobile-experience` provides us with, with an exception of `fastclick`:
 
-    $ meteor add mobile-status-bar
-    $ meteor add launch-screen
+    meteor add mobile-status-bar
+    meteor add launch-screen
 
 And finally, we will install `angular-meteor`, of which this tutorial is all about:
 
