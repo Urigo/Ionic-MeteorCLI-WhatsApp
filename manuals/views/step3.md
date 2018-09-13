@@ -132,7 +132,7 @@ So now that we have the chat view and controller, all is left to do is to link t
  ┊ 5┊ 5┊                class="item-chat item-remove-animate item-avatar item-icon-right"
 -┊ 6┊  ┊                type="item-text-wrap">
 +┊  ┊ 6┊                type="item-text-wrap"
-+┊  ┊ 7┊                href="#/tab/chats/{{ chat._id }}">
++┊  ┊ 7┊                href="#!/tab/chats/{{ chat._id }}">
  ┊ 7┊ 8┊        <img ng-src="{{ chat.picture }}">
  ┊ 8┊ 9┊        <h2>{{ chat.name }}</h2>
  ┊ 9┊10┊        <p>{{ chat.lastMessage.text }}</p>
