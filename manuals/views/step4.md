@@ -183,7 +183,7 @@ And for the controller the logic is simple, we ask the user to check again his p
 +┊  ┊27┊        this.$ionicLoading.hide();
 +┊  ┊28┊        if (err) return this.handleError(err);
 +┊  ┊29┊        this.$state.go('confirmation', { phone: this.phone });
-+┊  ┊30┊      });
++┊  ┊30┊      }.bind(this));
 +┊  ┊31┊    });
 +┊  ┊32┊  }
 +┊  ┊33┊
