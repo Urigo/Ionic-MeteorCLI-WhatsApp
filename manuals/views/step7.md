@@ -148,7 +148,7 @@ Now to ease the access to the profile page, we will add a link in the settings v
  ┊ 4┊ 4┊      <button ng-click="settings.logout()" class="button button-clear button-assertive">Logout</button>
  ┊ 5┊ 5┊    </div>
 +┊  ┊ 6┊    <ion-list>
-+┊  ┊ 7┊      <ion-item href="#/profile" class="item-icon-right">
++┊  ┊ 7┊      <ion-item ui-sref="profile" class="item-icon-right">
 +┊  ┊ 8┊        Profile
 +┊  ┊ 9┊        <i class="icon ion-chevron-right icon-accessory"></i>
 +┊  ┊10┊      </ion-item>
