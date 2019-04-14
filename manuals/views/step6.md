@@ -60,7 +60,7 @@ In order to do that, we need to do a joined collections publication. `reywood:pu
 ```diff
 @@ -1,5 +1,31 @@
  ┊ 1┊ 1┊import { Meteor } from 'meteor/meteor';
-+┊  ┊ 2┊import { Chats, Messages } from '../lib/collections';
++┊  ┊ 2┊import { Chats, Messages } from '../../../lib/collections';
  ┊ 2┊ 3┊
  ┊ 3┊ 4┊Meteor.publish('users', function() {
  ┊ 4┊ 5┊  return Meteor.users.find({}, { fields: { profile: 1 } });
