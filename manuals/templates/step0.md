@@ -40,7 +40,7 @@ We also need to make sure `Ionic` is installed along with its dependencies:
     $ meteor npm install ionic-scripts --save
     $ meteor npm install babel-runtime --save
 
-If you're an iOS user you might encounter some issues related to double tapping not being submitted correctly. This is caused due to a package automatically included by `Meteor` and it is called `mobile-experience` so we can have a more native feeling for our app once running on a mobile device, which is not always right across the board. This package is simply a cluster of the following packages:
+If you're an iOS user you might encounter some issues related to double tapping not being submitted correctly. This is caused by a package automatically included by `Meteor`. It is called `mobile-experience` so we can have a more native feeling for our app once it is  running on a mobile device, which is not always right across the board. This package is simply a cluster of the following packages:
 
 - `fastclick` - Avoid the 300ms touch delay.
 - `mobile-status-bar` - Avoid the status bar information covering up your app content.
