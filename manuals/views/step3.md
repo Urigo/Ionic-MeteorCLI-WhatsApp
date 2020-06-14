@@ -653,6 +653,10 @@ So now when the user focuses on the input, it goes up.
 
 So now it's time to implement the `sendMessage()` in our controller.
 
+Add the utility underscore which provides some useful helper methods.
+
+    $ meteor add underscore
+    
 We will use `callMethod()` in order to call that method on the server side.
 
 [{]: <helper> (diff_step 3.21)
