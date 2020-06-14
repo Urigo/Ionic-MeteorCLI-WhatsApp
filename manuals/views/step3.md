@@ -270,7 +270,7 @@ Now we will add some `css` to the messages list:
 +┊  ┊45┊    background-color: #FFF;
 +┊  ┊46┊  }
 +┊  ┊47┊
-+┊  ┊48┊  &.message-other::before, &.message-mine::before, {
++┊  ┊48┊  &.message-other::before, &.message-mine::before {
 +┊  ┊49┊    content: "";
 +┊  ┊50┊    position: absolute;
 +┊  ┊51┊    bottom: 3px;
